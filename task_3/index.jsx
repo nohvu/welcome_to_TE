@@ -11,8 +11,10 @@ const MainComponent = ({
 };
 
 // memoized component
-const ChildComponent = memo(({ user: { name, age } }) => {
-    return (
-        <div>user name: {name}, user age: {age}</div>
-    )
-});
+const ChildComponent = memo(({ user: { name, age } }: IProps) => {
+  return (
+    <div>
+      user name: {name}, user age: {age || "unknown"}
+    </div>
+  );
+}, (prevProps, nextProps) => prevProps.user.name === nextProps.user.name && prevProps.user.age === nextProps.user.age);
