@@ -1,4 +1,4 @@
-import { Fragment, memo } from 'react';
+import { Fragment, memo, useCallback } from 'react';
 
 const MainComponent = () => {
     const makeLog = useCallback(() => console.log("hi from MainComponent"), []); // function to make logs from MainComponent
