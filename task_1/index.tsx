@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, memo } from 'react';
 
 type IUser = {
     name: string
